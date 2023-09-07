@@ -2,7 +2,7 @@
 
 /**
  * main - Entry point
- * You might have to install the package libc6-dev-i386 on your Linux to test the -m32 gcc option
+ * install the package libc6-dev-i386 on your Linux to test the -m32 gcc
  *
  * Return: Always 0 (pass)
  */
