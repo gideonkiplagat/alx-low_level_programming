@@ -3,8 +3,7 @@
 
 /**
  * main - Entry point
- * Do not use printf and puts
- * Return: Always 1 (pass)
+ * Return: Always 1 (Success)
  */
 int main(void)
 {
