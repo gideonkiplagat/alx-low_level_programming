@@ -5,16 +5,21 @@
   *
   * Return: Always (Success)
   */
-int main() {
-    for (int i = 0; i < 16; i++) {
-        if (i < 10) {
-            putchar('0' + i); // Print the digits 0-9
-        } else {
-            putchar('a' + i - 10); // Print the lowercase letters a-f
-        }
-    }
-    
-    putchar('\n'); // Print a new line
-    
-    return (0);
+int main(void)
+{
+	char c;
+
+	for (c = '0'; c <= '9'; c++)
+	{
+		putchar(c);
+	}
+
+	for (c = 'a'; c <= 'f'; c++)
+	{
+		putchar(c);
+	}
+
+	putchar('\n');
+
+	return (0);
 }
