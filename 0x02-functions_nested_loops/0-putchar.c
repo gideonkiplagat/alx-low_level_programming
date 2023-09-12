@@ -1,11 +1,17 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - Entry point
- *
- * Return: Always (sucess)
- */
-int main() {
-	printf("_putchar\n");
+  * main - Entry point
+  *
+  * Return: Always 0
+  */
+int main(void)
+{
+	_putchar('m');
+	_putchar('a');
+	_putchar('i');
+	_putchar('n')
+	_putchar('\n');
+
 	return (0);
 }
