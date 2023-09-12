@@ -7,24 +7,24 @@
  */
 int main(void)
 {
-	unsigned long int fib1 = 1, fib2 = 2, next;
-	int count;
+	unsigned long int a = 1, b = 2, next_term = 0, sum = 0;
 
-	printf("%lu, %lu, ", fib1, fib2);
+	printf("%lu", a);
 
-	for (count = 3; count <= 98; count++)
+	while (next_term < 4000000)
 	{
-		next = fib1 + fib2;
-		printf("%lu", next);
+		if (next_term % 2 == 0)
+		{
+			sum += next_term;
+		}
 
-		if (count < 98)
-			printf(", ");
-		else
-			printf("\n");
-
-		fib1 = fib2;
-		fib2 = next;
+		printf(", %lu", next_term);
+		a = b;
+		b = next_term;
+		next_term = a + b;
 	}
+
+	printf("\nSum of even-valued terms: %lu\n", sum);
 
 	return (0);
 }
