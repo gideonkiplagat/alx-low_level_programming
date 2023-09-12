@@ -9,21 +9,25 @@ void times_table(void)
 
 	for (i = 0; i <= 9; i++)
 	{
-		_putchar('0'); /* Print the first digit */
-
-		for (j = 1; j <= 9; j++)
+		for (j = 0; j <= 9; j++)
 		{
-			_putchar(','); /* Print the comma */
-
-			/* Calculate the result and print it */
 			result = i * j;
 
-			if (result <= 9)
+			if (j == 0)
+			{
+				_putchar('0' + result);
+			}
+			else
+			{
+				_putchar(',');
 				_putchar(' ');
 
-			_putchar('0' + result);
-		}
+				if (result <= 9)
+					_putchar(' ');
 
+				_putchar('0' + result);
+			}
+		}
 		_putchar('\n');
 	}
 }
