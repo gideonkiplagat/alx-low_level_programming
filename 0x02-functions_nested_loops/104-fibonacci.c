@@ -7,24 +7,31 @@
  */
 int main(void)
 {
-	unsigned long int a = 1, b = 2, next_term = 0, sum = 0;
+	unsigned long int a = 0, b = 1, f = 0, c = 2;
+	unsigned long int hold1, hold2, hold3;
+	int count;
 
-	printf("%lu", a);
-
-	while (next_term < 4000000)
+	printf("%lu, %lu, ", b, c);
+	for (count = 2; count < 98; count++)
 	{
-		if (next_term % 2 == 0)
+		if (b + c > LARGEST || f > 0 || a > 0)
 		{
-			sum += next_term;
+			hold1 = (b + c) / LARGEST;
+			hold2 = (b + c) % LARGEST;
+			hold3 = a + f + hold1;
+			a = f, f = hold3;
+			b = c, c = hold2;
+			printf("%lu%010lu", f, bk2);
 		}
-
-		printf(", %lu", next_term);
-		a = b;
-		b = next_term;
-		next_term = a + b;
+		else
+		{
+			hold2 = b + c;
+			b = c, c = hold2;
+			printf("%lu", c);
+		}
+		if (count != 97)
+			printf(", ");
 	}
-
-	printf("\nSum of even-valued terms: %lu\n", sum);
-
+	printf("\n");
 	return (0);
 }
