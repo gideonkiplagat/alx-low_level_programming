@@ -6,6 +6,7 @@
  * Description: Tests the positive_or_negative() function with 0.
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
 	int i;
