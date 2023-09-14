@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - Entry point for the FizzBuzz program.
+ * main - prints FizzBuzz program.
  *
- * Return: Always 0.
+ * Return: Always 0 (success)
  */
 int main(void)
 {
