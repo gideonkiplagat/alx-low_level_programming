@@ -1,6 +1,4 @@
-#include "main.h"
-#ifndef MAIN_H
-#define MAIN_H	
+#include "main.h"	
 
 /**
  * mul - Multiplies two integers.
