@@ -2,26 +2,26 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define PASSWORD_LENGTH 6
+#define PASSWORD_LENGTH 12
 
 int main(void)
 {
     srand(time(NULL));
-
     char password[PASSWORD_LENGTH + 1];
+    const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=<>?";
 
-    const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    password[0] = charset[rand() % 26];
+    password[1] = charset[rand() % 26 + 26];
+    password[2] = charset[rand() % 10 + 52];
 
-    printf("Generating a random valid password for 101-crackme:\n");
-
-    for (int i = 0; i < PASSWORD_LENGTH; i++)
+    for (int i = 3; i < PASSWORD_LENGTH; i++)
     {
-        int index = rand() % (sizeof(charset) - 1);
-        password[i] = charset[index];
+        password[i] = charset[rand() % (sizeof(charset) - 1)];
     }
+
     password[PASSWORD_LENGTH] = '\0';
 
-    printf("Generated password: %s\n", password);
+    printf("%s", password);
 
     return 0;
 }
