@@ -16,7 +16,7 @@ int main(void)
 
     while (sum <= 2645)
     {
-        c = rand() % 95 + 32;  // Generate printable ASCII characters
+        c = rand() % 95 + 32;
         sum += c;
         putchar(c);
     }
