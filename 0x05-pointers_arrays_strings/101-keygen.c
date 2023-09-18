@@ -14,7 +14,7 @@ int main(void)
 {
     char password[PASSWORD_LENGTH + 1];
     int index = 0, sum = 0, diff_half1, diff_half2;
-    
+
     srand(time(0));
 
     password[0] = rand() % 26 + 'A';
@@ -35,7 +35,7 @@ int main(void)
 
     for (index = 0; index < 3 + diff_half1; index++)
     {
-        if (password[index] - diff_half1 > '!')
+        if (password[index] - diff_half1 >= '!')
         {
             password[index] -= diff_half1;
         }
@@ -47,7 +47,7 @@ int main(void)
 
     for (index = 3 + diff_half1; index < PASSWORD_LENGTH; index++)
     {
-        if (password[index] - diff_half2 > '!')
+        if (password[index] - diff_half2 >= '!')
         {
             password[index] -= diff_half2;
         }
@@ -59,7 +59,7 @@ int main(void)
 
     password[PASSWORD_LENGTH] = '\0';
 
-    printf("%s", password);
+    printf("%s\n", password);
 
     return 0;
 }
