@@ -11,7 +11,6 @@ void print_second_half(char *str)
     int length = 0;
     int start;
 
-    /* Calculate the length of the string */
     while (str[length] != '\0')
     {
         length++;
