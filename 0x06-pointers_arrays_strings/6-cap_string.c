@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * cap_string - Capitalizes the first letter.
- * @str: The string to be capitalized.
- *
- * Return: A pointer to the modified string.
- */
+  * cap_string - Capitalizes
+  * @s: The string
+  *
+  * Return: char value
+  */
 char *cap_string(char *s)
 {
 	int a = 0, i;
