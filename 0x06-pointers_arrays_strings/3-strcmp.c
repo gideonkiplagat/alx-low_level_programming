@@ -7,8 +7,8 @@
  *
  * Return: 
  *   - 0 if the strings are equal.
- *   - A negative integer if s1 is less than s2.
- *   - A positive integer if s1 is greater than s2.
+ *   - A negative integer if s1 < s2.
+ *   - A positive integer if s1 > s2.
  */
 int _strcmp(char *s1, char *s2)
 {
