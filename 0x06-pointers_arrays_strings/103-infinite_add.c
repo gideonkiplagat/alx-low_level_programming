@@ -4,7 +4,7 @@
  * rev_string - Reverses a string.
  * @n: The string to reverse.
  *
- * Return: void
+ * Description: This function reverses the characters in a string.
  */
 void rev_string(char *n)
 {
@@ -32,13 +32,15 @@ void rev_string(char *n)
  * @val2: The second digit.
  * @overflow: Pointer to the overflow flag.
  *
+ * Description: This function adds two digits and handles overflow if any.
+ *
  * Return: The result of the addition (0-18).
  */
 int add_digits(int val1, int val2, int *overflow)
 {
     int temp_tot = val1 + val2 + *overflow;
     *overflow = temp_tot / 10;
-    return temp_tot % 10;
+    return (temp_tot % 10);
 }
 
 /**
@@ -47,6 +49,9 @@ int add_digits(int val1, int val2, int *overflow)
  * @n2: The second number as a string.
  * @r: Pointer to the buffer to store the result.
  * @size_r: The size of the buffer.
+ *
+ * Description: This function adds two numbers represented as strings and stores
+ * the result in a buffer.
  *
  * Return: Pointer to the result or 0 if the buffer is too small.
  */
