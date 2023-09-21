@@ -27,7 +27,7 @@ void rev_string(char *n)
 }
 
 /**
- * add_digits - Adds two digits.
+ * add_digits - Adds two digits and handles overflow.
  * @val1: The first digit.
  * @val2: The second digit.
  * @overflow: Pointer to the overflow flag.
@@ -42,13 +42,13 @@ int add_digits(int val1, int val2, int *overflow)
 }
 
 /**
- * infinite_add - Adds two numbers.
+ * infinite_add - Adds two numbers stored in char arrays.
  * @n1: The first number as a string.
  * @n2: The second number as a string.
  * @r: Pointer to the buffer to store the result.
  * @size_r: The size of the buffer.
  *
- * Return: Pointer to the result.
+ * Return: Pointer to the result or 0 if the buffer is too small.
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
