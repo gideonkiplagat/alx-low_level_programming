@@ -1,84 +1,59 @@
 #include "main.h"
 
 /**
- * infinite_add - Adds two numbers stored in given char arrays.
+ * reverse_string - Reverses a string in place.
+ * @str: The string to reverse.
+ */
+void reverse_string(char *str)
+{
+    int length = 0;
+    while (str[length] != '\0')
+    {
+        length++;
+    }
+
+    int start = 0;
+    int end = length - 1;
+    while (start < end)
+    {
+        char temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+/**
+ * add_numbers - Adds two numbers.
+ * @n1: The first number as a string.
+ * @n2: The second number as a string.
+ * @result: Buffer to store the result.
+ * @size_result: The size of the result buffer.
+ *
+ * Return: 0 if buffer is too small, 1 otherwise.
+ */
+int add_numbers(char *n1, char *n2, char *result, int size_result)
+
+/**
+ * infinite_add - Adds two numbers.
  * @n1: The first number as a string.
  * @n2: The second number as a string.
  * @r: Pointer to the buffer to store the result.
  * @size_r: The size of the buffer.
  *
- * Return: Pointer to the result in the buffer, or 0 if buffer is too small.
+ * Return: Pointer to the result in the buffer.
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int l1, l2, tmpl, rl, i, sum, num1, num2, carry;
-	char tmp[10000];
+    int result_size = size_r;
 
-	rl = i = l1 = l2 = sum = num1 = num2 = carry = 0;
+    if (add_numbers(n1, n2, r, result_size) == 0)
+    {
+        return (0);
+    }
 
-	while (n1[l1] != '\0')
-		l1++;
+    reverse_string(r);
 
-	while (n2[l2] != '\0')
-		l2++;
-
-	if (l1 + 2 > size_r || l2 + 2 > size_r)
-		return (0);
-
-	l1--;
-	l2--;
-
-	while (i <= l1 || i <= l2)
-	{
-		num1 = num2 = 0;
-
-		if (i <= l1)
-			num1 = n1[l1 - i] - '0';
-
-		if (i <= l2 && (l2 - i) >= 0)
-			num2 = n2[l2 - i] - '0';
-
-		sum = num1 + num2 + carry;
-
-		if (sum >= 10)
-		{
-			carry = 1;
-			sum -= 10;
-		}
-		else
-			carry = 0;
-
-		r[i] = sum + '0';
-		i++;
-		rl++;
-	}
-
-	if (carry > 0)
-	{
-		r[i] = carry + '0';
-		r[i + 1] = '\0';
-	}
-
-	i = tmpl = 0;
-
-	while (i <= rl)
-	{
-		tmp[i] = r[rl - i];
-		tmpl++;
-		i++;
-	}
-
-	i = 0;
-
-	while (i < tmpl)
-	{
-		if (r[i] == '\0')
-		{
-			break;
-		}
-		r[i] = tmp[i];
-		i++;
-	}
-
-	return (r);
+    return r;
 }
