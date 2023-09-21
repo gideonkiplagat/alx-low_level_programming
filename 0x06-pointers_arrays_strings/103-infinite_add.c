@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * rev_string - Reverses a string.
  * @n: The string to reverse.
@@ -25,7 +24,6 @@ void rev_string(char *n)
         *(n + i) = temp;
     }
 }
-
 /**
  * infinite_add - Adds two numbers represented as strings.
  * @n1: The first number as a string.
