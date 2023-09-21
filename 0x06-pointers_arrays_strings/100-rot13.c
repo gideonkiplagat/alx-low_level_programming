@@ -2,32 +2,31 @@
 #include <stdio.h>
 
 /**
- * rot13 - Encodes a string using ROT13.
- * @str: The string to be encoded.
- *
- * Return: A pointer to the modified string.
- */
-char *rot13(char *str)
+  * rot13 -Encodes the string.
+  * @s: Encoded string
+  *
+  * Return: modified string
+  */
+char *rot13(char *s)
 {
-    int index = 0;
+	int a = 0;
 
-    while (str[index])
-    {
-        while ((str[index] >= 'a' && str[index] <= 'z') || (str[index] >= 'A' && str[index] <= 'Z'))
-        {
-            if ((str[index] > 'm' && str[index] <= 'z') || (str[index] > 'M' && str[index] <= 'Z'))
-            {
-                str[index] -= 13;
-                break;
-            }
+	while (s[a])
+	{
+		while ((s[a] >= 'a' && s[a] <= 'z') || (s[a] >= 'A' && s[a] <= 'Z'))
+		{
+			if ((s[a] > 'm' && s[a] <= 'z') || (s[a] > 'M' && s[a] <= 'Z'))
+			{
+				s[a] -= 13;
+				break;
+			}
 
-            str[index] += 13;
-            break;
-        }
+			s[a] += 13;
+			break;
+		}
 
-        index++;
-    }
+		a++;
+	}
 
-    return (str);
+	return (s);
 }
-
