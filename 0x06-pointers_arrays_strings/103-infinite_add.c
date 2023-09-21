@@ -4,6 +4,8 @@
  * rev_string - Reverses a string.
  * @n: The string to reverse.
  *
+ * Description: This function reverses the input string 'n' in place.
+ *
  * Return: None.
  */
 void rev_string(char *n)
@@ -33,7 +35,10 @@ void rev_string(char *n)
  * @r: Buffer to store the result.
  * @size_r: The size of the buffer.
  *
- * Return: Pointer to the result, or NULL if there is an error.
+ * Description: This function adds two numbers represented as strings ('n1' and 'n2')
+ * and stores the result in the 'r' buffer, which should have a size of 'size_r'.
+ *
+ * Return: Pointer to the result in 'r', or 0 if there is an error.
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
@@ -48,7 +53,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
     j--;
 
     if (j >= size_r || i >= size_r)
-        return (NULL);
+        return (0);
 
     while (j >= 0 || i >= 0 || overflow == 1)
     {
@@ -70,7 +75,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
             overflow = 0;
 
         if (digits >= (size_r - 1))
-            return (NULL);
+            return (0);
 
         *(r + digits) = (temp_tot % 10) + '0';
         digits++;
@@ -79,9 +84,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
     }
 
     if (digits == size_r)
-        return (NULL);
+        return (0);
 
-    *(r + digits) = '\0';
+    *(r + digits) = '0';
     rev_string(r);
     return (r);
 }
