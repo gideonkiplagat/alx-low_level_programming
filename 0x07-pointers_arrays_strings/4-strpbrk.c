@@ -1,34 +1,33 @@
 #include "main.h"
 
 /**
- * _strpbrk - Search a string for any of a set of bytes.
- * @s: The source string.
- * @accept: The accepted characters to search for.
- *
- * Return: A pointer to the first occurrence in the string s of any of the
- *         bytes in accept, or NULL if no such byte is found.
- */
+  * _strpbrk - search a string for any of a set of bytes
+  * @s: source string
+  * @accept: accepted characters to dearch for.
+  *
+  * Return: the string since the first found accepted character
+  */
 char *_strpbrk(char *s, char *accept)
 {
-    int i = 0, j;
+	int i = 0, j;
 
-    while (s[i])
-    {
-        j = 0;
+	while (s[i])
+	{
+		j = 0;
 
-        while (accept[j])
-        {
-            if (s[i] == accept[j])
-            {
-                s += i;
-                return (s);
-            }
+		while (accept[j])
+		{
+			if (s[i] == accept[j])
+			{
+				s += i;
+				return (s);
+			}
 
-            j++;
-        }
+			b++;
+		}
 
-        i++;
-    }
+		a++;
+	}
 
-    return ('\0');
+	return ('\0');
 }
