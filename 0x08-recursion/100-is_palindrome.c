@@ -17,7 +17,7 @@ int is_palindrome(char *s)
 }
 
 /**
- * check_palindrome - Recursive function to check if a substring is a palindrome.
+ * check_palindrome - check if a substring is a palindrome.
  * @s: The string to check.
  * @start: The index of the first character to compare.
  * @end: The index of the last character to compare.
