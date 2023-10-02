@@ -41,7 +41,7 @@ char *str_concat(char *s1, char *s2)
 
 		if (k >= i)
 		{
-			conacatenated[k] = s2[j];
+			concatenated[k] = s2[j];
 			j++;
 		}
 
