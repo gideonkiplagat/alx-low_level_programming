@@ -11,22 +11,35 @@
  */
 char **strtow(char *str)
 {
-	char *words = NULL;
-	unsigned int i = 0, j = 0, k;
+	char **words;
+	int i;
+	int j = 0;
+	int count = 0;
 
-	if (strncmp(str, "", 1) || str == NULL)
+	if (str == NULL)
 		return (NULL);
-	words = malloc((i + j + 1) * sizeof(char));
+
+	for (i = 0 ; str[i] != '\0' ; i++)
+	{
+		if (str[i] != 32)
+			count++;
+	}
+
+	words = malloc(sizeof(char) * count);
+
 	if (words == NULL)
 		return (NULL);
-	for (k = 0; k < i; k++)
-		words[k] = str[k];
-	i = k;
-	for (k = 0; k < j; k++)
+
+	for (i = 0 ; str[i] != '\0' ; i++)
 	{
-		words[i] = str[k];
-		i++;
+		if (str[i] != 32)
+		{
+			*words[j] = str[i];
+			j++;
+		}
+		else
+		{
+		}
 	}
-	words[i] = '\0';
-	return (NULL);
+	return (words);
 }
