@@ -1,0 +1,9 @@
+## 0x13. C - More singly linked lists
+
+### General
+How to use linked lists.
+
+Start to look for the right source of information without too much help
+
+### Resources
+https://www.geeksforgeeks.org/data-structures/linked-list/?ref=lbp
