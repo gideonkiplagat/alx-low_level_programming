@@ -38,10 +38,10 @@ unsigned int binary_to_uint(const char *b)
   */
 int _strlen(const char *s)
 {
-	int count = 0;
+	int c = 0;
 
-	while (s[count])
-		count++;
+	while (s[c])
+		c++;
 
-	return (count);
+	return (c);
 }
