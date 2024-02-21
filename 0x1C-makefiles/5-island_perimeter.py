@@ -1,27 +1,41 @@
 #!/usr/bin/python3
-"""
-module for perimeter of island
-"""
+""" module for perimeter of island """
 
 
 def island_perimeter(grid):
-    """returns the perimeter of the island
-    Args:
-         grid (list) = list of integers
+    """ island_perimeter:
+                    Args: grid, a list of list of integers
+                    Return: perimeter of the island described in grid
     """
 
-    width = len(grid[0])
-    height = len(grid)
-    edges = 0
-    size = 0
+    perimeter = 0
+    env_list = []
 
-    for i in range(height):
-        for j in range(width):
-            if grid[i][j] == 1:
-                size += 1
-               
-                if (j > 0 and grid[i][j - 1] == 1):
-                    edges += 1
-                if (i > 0 and grid[i - 1][j] == 1):
-                    edges += 1
-    return size * 4 - edges * 2
+    for items in range(len(grid)):
+        if items == 0 or items == len(grid):
+            continue
+        for cell in range(len(grid[items])):
+            if cell == 0 or cell == len(grid[items]):
+                continue
+            else:
+                if grid[items][cell] == 1:
+                    env_list = [grid[items - 1][cell], grid[items][cell + 1],
+                                grid[items + 1][cell],  grid[items][cell - 1]]
+                    count = 0
+                    for j in env_list:
+                        if j == 0:
+                            count = count + 1
+                    if (count == 4):
+                        return 4
+                    elif (count == 3):
+                        perimeter = perimeter + 3
+                    elif (count == 2):
+                        perimeter = perimeter + 2
+                    elif (count == 1):
+                        perimeter = perimeter + 1
+                    else:
+                        pass
+                    env_list = []
+                else:
+                    pass
+    return perimeter
